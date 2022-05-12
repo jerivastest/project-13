@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.57.0'
+project:
+    name: project-13
+    package:
+        name: project-13
+        api_version: '54.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/project-13/tests
+            options:
+                outputdir: robot/project-13/results
+
+    robot_testdoc:
+        options:
+            path: robot/project-13/tests
+            output: robot/project-13/doc/project-13_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
